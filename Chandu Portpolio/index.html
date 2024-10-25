@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankapalli Chandu | Agriculture & Operations Professional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, #f8f9fa 50%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a:hover {
+            background: #2E7D32;
+            color: white;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 1.8rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: #2E7D32;
+            transform: scaleX(0.3);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover h2::after {
+            transform: scaleX(1);
+        }
+
+        .education-grid, .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .education-item, .skill-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid #2E7D32;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .experience-item h3 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item p {
+            color: #666;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: #2E7D32;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #1B5E20;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #2E7D32;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #1B5E20;
+            transform: translateY(-3px);
+        }
+
+        .awards-certifications {
+            margin-top: 2rem;
+        }
+
+        .award-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #1B5E20;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bankapalli Chandu</h1>
+        <p>Agri-Business Management Professional | Operations Specialist</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am an aspiring Agri-Business Management professional with a strong focus on sustainable agriculture and operational excellence. My experience spans project management, research, and sustainable solutions in the agricultural sector. I am passionate about bridging the gap between traditional farming practices and modern technologies to create sustainable agricultural solutions.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-item">
+                <h3>Agri Business Management</h3>
+                <p>Vivekananda Global University</p>
+                <p>2020 - Present</p>
+                <p>CGPA: 7.66</p>
+            </div>
+            <div class="education-item">
+                <h3>Science</h3>
+                <p>Sri Chaitanya Junior College</p>
+                <p>2018 - 2020</p>
+                <p>92.8%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="experience-item">
+            <h3>Summer Research Intern</h3>
+            <p>Indian Chamber Of Food And Agriculture | New Delhi</p>
+            <p>March 2024 - May 2024</p>
+            <p>Conducted research in food and agriculture sector, focusing on data analysis and report generation.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Operations & Optimization Intern</h3>
+            <p>Shvaas Sustainable Solutions Pvt. Ltd | Jaipur</p>
+            <p>August 2023 - November 2023</p>
+            <p>Contributed to supply chain process improvements and operational efficiency enhancement.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Green Roots Club Operations Head</h3>
+            <p>Vivekananda Global University | Jaipur</p>
+            <p>October 2022 - September 2023</p>
+            <p>Led club branding initiatives and successfully managed various events and activities.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Key Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Agricultural Technology Adoption Research</h3>
+                <p>Led a SIDBI Swalamban Chair research project analyzing barriers to modern technology adoption among farmers, providing data-driven recommendations for improvement.</p>
+            </div>
+            <div class="project-card">
+                <h3>Mustard Crop Cultivation Trials</h3>
+                <p>Conducted research on optimizing mustard crop yield through controlled irrigation and fertilizer application methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <i class="fas fa-tasks fa-2x"></i>
+                <h3>Project Management</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-users fa-2x"></i>
+                <h3>Team Management</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-comments fa-2x"></i>
+                <h3>Communication</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-desktop fa-2x"></i>
+                <h3>MS Office</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-palette fa-2x"></i>
+                <h3>Graphic Design</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-seedling fa-2x"></i>
+                <h3>Agricultural Practices</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>Awards & Certifications</h2>
+        <div class="awards-certifications">
+            <div class="award-item">
+                <h3>Shark Tank VGU</h3>
+                <p>ACIC VGU Foundation | March 2023</p>
+            </div>
+            <div class="award-item">
+                <h3>Code Red 3.0 Hackathon</h3>
+                <p>Agri-Tech Theme | October 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:bankapallychandu@gmail.com">bankapallychandu@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+919121725098">+91 9121725098</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Jaipur, Rajasthan</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bankapalli-chandu-a2b611260/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bankapalli Chandu. All rights reserved.</p>
+    </footer>
+</body>
+</html>
